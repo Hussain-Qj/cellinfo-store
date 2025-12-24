@@ -1,0 +1,215 @@
+/* Admin Login Styles - PROFESSIONAL VERSION */
+
+:root {
+    --primary: #115740;
+    --primary-dark: #0d4231;
+    --accent: #F1C40F;
+    --bg-color: #f0f2f5;
+    --text-main: #2c3e50;
+    --text-muted: #7f8c8d;
+    --danger: #e74c3c;
+}
+
+.admin-login-body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(17, 87, 64, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(17, 87, 64, 0.05) 0%, transparent 20%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.login-box {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.login-header {
+    margin-bottom: 35px;
+}
+
+.admin-logo {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 0 0 5px 0;
+    letter-spacing: -1px;
+}
+
+.admin-logo span {
+    color: var(--accent);
+}
+
+.login-header h2 {
+    color: var(--text-main);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-header p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    font-weight: 600;
+    margin-bottom: 6px;
+    margin-left: 2px;
+}
+
+.input-icon-wrapper {
+    position: relative;
+}
+
+.input-group i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #95a5a6;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px 12px 42px;
+    border: 1.5px solid #dfe6e9;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background: #fff;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(17, 87, 64, 0.1);
+}
+
+.input-group input:focus+i,
+.input-group input:focus~i {
+    color: var(--primary);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%) !important;
+    left: auto !important;
+    cursor: pointer;
+    pointer-events: all !important;
+    color: #95a5a6;
+    padding: 5px;
+}
+
+.toggle-password:hover {
+    color: var(--text-main);
+}
+
+.login-error {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--danger);
+    font-size: 0.85rem;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    display: none;
+    border: 1px solid rgba(231, 76, 60, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px rgba(17, 87, 64, 0.2);
+}
+
+.login-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(17, 87, 64, 0.3);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+.login-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #f1f1f1;
+}
+
+.login-footer p {
+    color: #95a5a6;
+    font-size: 0.75rem;
+}
+
+/* Shake Animation */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-4px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(4px);
+    }
+}

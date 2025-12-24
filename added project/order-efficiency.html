@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Efficiency | CELLINFO.pk</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .efficiency-container {
+            padding: 8rem 5%;
+        }
+
+        .efficiency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .metric-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        .metric-label {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            margin-top: 30px;
+            height: 400px;
+        }
+
+        .efficiency-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .efficiency-header h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .efficiency-header p {
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">CELLINFO<span style="color:var(--secondary);">.pk</span></div>
+            <ul class="nav-links">
+                <li><a href="./E.Project_admin/login.html" target="_blank" class="admin-btn"><i
+                            class="fas fa-user-shield"></i> Admin</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Top Mobiles.html">Top Mobiles</a></li>
+                <li><a href="order-efficiency.html" class="active">Order Efficiency</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="efficiency-container">
+        <div class="efficiency-header">
+            <h1>Operational Transparency</h1>
+            <p>Real-time insights into our service quality and order processing efficiency.</p>
+        </div>
+
+        <div class="efficiency-grid">
+            <div class="metric-card">
+                <i class="fas fa-clock fa-2x" style="color:var(--secondary)"></i>
+                <div class="metric-value" id="avgTime">0h</div>
+                <div class="metric-label">Avg. Fulfillment Time</div>
+            </div>
+            <div class="metric-card">
+                <i class="fas fa-check-circle fa-2x" style="color:var(--primary)"></i>
+                <div class="metric-value" id="successRate">0%</div>
+                <div class="metric-label">Order Success Rate</div>
+            </div>
+            <div class="metric-card">
+                <i class="fas fa-box fa-2x" style="color:#3498db"></i>
+                <div class="metric-value" id="stockLevel">0%</div>
+                <div class="metric-label">Inventory Availability</div>
+            </div>
+        </div>
+
+        <div class="efficiency-grid">
+            <div class="chart-container">
+                <h3>Order Fulfillment Trend (Last 7 Days)</h3>
+                <canvas id="fulfillmentChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Customer Satisfaction</h3>
+                <canvas id="satisfactionChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div style="text-align:center; padding: 20px; color:white; background:#202022;">
+            <p>&copy; 2025 CELLINFO.pk - Transparency Dashboard</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load Data
+            const orders = JSON.parse(localStorage.getItem('cellinfo_orders') || '[]');
+            const inventory = JSON.parse(localStorage.getItem('admin_inventory') || '[]');
+
+            // Calculate Metrics
+            const totalOrders = orders.length;
+            const completedOrders = orders.filter(o => o.status === 'Delivered').length;
+            const successRate = totalOrders ? Math.round((completedOrders / totalOrders) * 100) : 100;
+
+            // Mocking Time Data (Since we just implemented timestamping)
+            const avgTime = "24h";
+
+            // Calculate Inventory Health
+            const totalStock = inventory.reduce((acc, item) => acc + (item.stock || 0), 0);
+            const maxStockCapacity = inventory.length * 50; // Assuming 50 base stock
+            const stockHealth = Math.round((totalStock / maxStockCapacity) * 100) || 85;
+
+            // Update DOM
+            document.getElementById('avgTime').innerText = avgTime;
+            document.getElementById('successRate').innerText = successRate + "%";
+            document.getElementById('stockLevel').innerText = stockHealth + "%";
+
+            // Charts
+            new Chart(document.getElementById('fulfillmentChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Orders Processed',
+                        data: [12, 19, 3, 5, 2, 3, totalOrders > 20 ? totalOrders : 20],
+                        borderColor: '#115740',
+                        tension: 0.4
+                    }]
+                }
+            });
+
+            // ---------------------------------------------------------
+            // 3. FEEDBACK ANALYTICS Integration
+            // ---------------------------------------------------------
+            const feedback = JSON.parse(localStorage.getItem('cellinfo_feedback') || '[]');
+
+            // Calculate Averages for the 3 Areas
+            let avgEfficiency = 0, avgDelivery = 0, avgProduct = 0;
+            if (feedback.length > 0) {
+                const sums = feedback.reduce((acc, f) => {
+                    acc.eff += (f.ratings.efficiency || 5);
+                    acc.del += (f.ratings.delivery || 5);
+                    acc.prod += (f.ratings.product || 5);
+                    return acc;
+                }, { eff: 0, del: 0, prod: 0 });
+
+                avgEfficiency = (sums.eff / feedback.length).toFixed(1);
+                avgDelivery = (sums.del / feedback.length).toFixed(1);
+                avgProduct = (sums.prod / feedback.length).toFixed(1);
+            }
+
+            // Update Chart
+            new Chart(document.getElementById('satisfactionChart'), {
+                type: 'pie', // Evolving to Pie as requested
+                data: {
+                    labels: [
+                        `Efficiency (${avgEfficiency})`,
+                        `Delivery (${avgDelivery})`,
+                        `Product (${avgProduct})`
+                    ],
+                    datasets: [{
+                        label: 'Avg Rating (1-5)',
+                        data: [avgEfficiency || 5, avgDelivery || 5, avgProduct || 5], // Default to 5 if empty
+                        backgroundColor: ['#e67e22', '#2ecc71', '#3498db'],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        title: { display: true, text: 'Satisfaction by Category' }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

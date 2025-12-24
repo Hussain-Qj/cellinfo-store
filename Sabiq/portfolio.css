@@ -1,0 +1,439 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* --- 1. CORE VARIABLES & RESETS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Scheme: Deep Navy, Rich Blue, Energetic Coral, Gold Accent */
+    --primary-color: #1a2d5e; /* Deep Navy/Indigo */
+    --secondary-color: #3b5998; /* Rich Mid-Blue */
+    --accent-color: #ff6b6b; /* Energetic Coral Red */
+    --gold-accent: #ffcc00; /* Brighter Gold */
+    --text-color: #333d47; /* Dark Slate Gray */
+    --light-bg: #f5f7fa; /* Very Light Gray/Blue */
+    --white: #ffffff;
+    --card-bg: #ffffff;
+    
+    /* Transitions & Shadows */
+    --transition-fast: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-slow: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* --- 2. NAVIGATION & HEADER --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--white);
+    box-shadow: var(--shadow-light);
+    z-index: 1000;
+    transition: var(--transition-fast);
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo h2 {
+    color: var(--primary-color);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition-fast);
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.nav-link:hover, .nav-link.active-link {
+    color: var(--accent-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--accent-color);
+    transition: var(--transition-slow);
+}
+
+.nav-link:hover::after, .nav-link.active-link::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: var(--primary-color);
+    transition: var(--transition-fast);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- 3. HERO SECTION & BUTTONS --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #3b5998 0%, #1a2d5e 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 100px;
+    transition: transform 0.1s linear; 
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 5%;
+    z-index: 1;
+}
+
+.hero-text {
+    flex: 1;
+    color: var(--white);
+    max-width: 600px; /* Constrain text width */
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    min-height: 100px; /* Prevents layout shift during JS typing */
+}
+
+.highlight, .name {
+    color: var(--gold-accent);
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+.btn {
+    padding: 14px 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: var(--transition-slow);
+    cursor: pointer;
+    position: relative; 
+    overflow: hidden; 
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: #e64c4c; 
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-secondary:hover {
+    background: var(--white);
+    color: var(--primary-color);
+    box-shadow: var(--shadow-light);
+}
+
+.btn span {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes ripple {
+    0% { width: 0; height: 0; opacity: 1; }
+    100% { width: 300px; height: 300px; opacity: 0; }
+}
+
+/* NEW: Wrapper for the image and border for alignment */
+.hero-image-wrapper {
+    position: relative; /* Essential for positioning children */
+    width: 300px; /* Match the profile image width */
+    height: 300px; /* Match the profile image height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    width: 100%; /* Take full width of parent wrapper */
+    height: 100%; /* Take full height of parent wrapper */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--white);
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-slow);
+    filter: grayscale(0.1) brightness(1.05); 
+    z-index: 2; /* Ensure image is above the border */
+}
+
+.profile-img:hover {
+    transform: scale(1.02);
+    filter: grayscale(0) brightness(1.1);
+}
+
+.image-border {
+    position: absolute; /* Position relative to .hero-image-wrapper */
+    width: 350px; /* Larger than image to orbit around it */
+    height: 350px;
+    border: 4px solid var(--gold-accent);
+    border-radius: 50%;
+    /* Center it relative to its parent */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* For perfect centering */
+    animation: orbit 15s linear infinite; /* New animation */
+    z-index: 1; /* Below the image */
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+    font-size: 1.8rem; 
+    animation: bounce 2s infinite;
+}
+
+/* --- 4. SECTIONS & GENERAL STYLES --- */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: var(--primary-color);
+    position: relative;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* --- 5. ABOUT SECTION --- */
+.about {
+    background: var(--light-bg);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.personal-info {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr; /* Adjust for better layout */
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center; /* Align label and value vertically */
+    gap: 10px;
+}
+
+.info-label {
+    font-weight: 600;
+    color: var(--primary-color);
+    width: 80px; /* Fixed width for labels */
+}
+
+.info-value {
+    color: var(--text-color);
+}
+
+/* --- 6. SKILLS SECTION --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    border-bottom: 5px solid var(--secondary-color);
+    transition: var(--transition-slow);
+    
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(59, 89, 152, 0.2);
+    border-bottom: 5px solid var(--accent-color);
+}
+
+.skill-icon {
+    font-size: 3.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    animation: iconPulse 2s infinite;
+}
+
+.skill-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.skill-progress {
+    margin-top: 1.5rem;
+    height: 10px; 
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--secondary-color);
+    border-radius: 5px;
+    width: 0;
+    transition: width 2s cubic-bezier(0.2, 0.8, 0.6, 1); 
+}
+
+/* --- 7. EDUCATION SECTION (Timeline) --- */
+.education {
+    background: var(--light-bg);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 3px; 
+    background: var(--secondary-color);
+}
+
+.timeline-item {
+    padding: 10px 0;
+    position: relative;
+    width: 50%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+

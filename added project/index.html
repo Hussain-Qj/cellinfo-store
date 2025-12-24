@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CELLINFO.pk | Pakistan's #1 Mobile Store</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">CELLINFO<span style="color:var(--secondary);">.pk</span></div>
+            <ul class="nav-links">
+                <li>
+                    <a href="./E.Project_admin/login.html" target="_blank" class="admin-btn">
+                        <i class="fas fa-user-shield"></i> Admin
+                    </a>
+                </li>
+                <li><a href="./index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="#service" data-i18n="nav_service">Service</a></li>
+                <li><a href="#about" data-i18n="nav_about">About</a></li>
+                <li><a href="./Top Mobiles.html" data-i18n="nav_mobiles">Top Mobiles</a></li>
+                <li><a href="./order-efficiency.html" style="color:var(--secondary); font-weight:bold;">Order
+                        Efficiency</a></li>
+                <li><a href="./feedback.html" style="font-weight:bold;">Feedback</a></li>
+                <li class="lang-switch">
+                    <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()">
+                    <label for="lang-toggle" class="lang-label">
+                        <span class="en">ENG</span>
+                        <span class="ur">اردو</span>
+                    </label>
+                </li>
+                <li>
+                    <a href="#" onclick="openCart(event)">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span id="cart-count" class="badge">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
+    </header>
+
+
+
+    <div class="floating-actions">
+        <button id="theme-toggle" class="float-btn theme-btn" onclick="toggleTheme()" title="Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <section id="home" class="hero-section">
+        <!-- Background Video -->
+        <video autoplay muted loop id="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-futuristic-holographic-interface-99-large.mp4"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+
+        <div class="hero-content">
+            <h1 data-i18n="hero_title">Most Demanding Mobile in Pakistan Market</h1>
+            <p data-i18n="hero_desc">Explore 100% PTA Approved devices with official warranty. Compare features and get
+                the best price.</p>
+            <br>
+            <a href="#demanding" class="btn" data-i18n="hero_btn">Explore Collections</a>
+        </div>
+
+        <!-- 3D Mobile Animation Container -->
+        <div class="hero-3d-model">
+            <div class="phone-3d">
+                <div class="screen"></div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <!-- SERVICE SECTION -->
+    <section id="service" class="section-3d">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card 3d-card">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your devices delivered within 24 hours across Pakistan.</p>
+                </div>
+                <div class="service-card 3d-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Official Warranty</h3>
+                    <p>1 year official warranty with all PTA approved devices.</p>
+                </div>
+                <div class="service-card 3d-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Our expert team is available round the clock for assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section-3d">
+        <div class="container-split">
+            <div class="about-text">
+                <h2>About CELLINFO.pk</h2>
+                <p>We are Pakistan's leading mobile phone retailer, committed to providing authentic technology
+                    products. With over 10 years of trusted service, we ensure every customer gets the best device for
+                    their needs.</p>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span class="count">10k+</span>
+                        <span class="label">Happy Customers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="count">100%</span>
+                        <span class="label">Authentic</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image-3d">
+                <div class="cube-container">
+                    <div class="cube">
+                        <div class="face front">100%</div>
+                        <div class="face back">Trusted</div>
+                        <div class="face right">Original</div>
+                        <div class="face left">Secure</div>
+                        <div class="face top">Best</div>
+                        <div class="face bottom">Prices</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-parent">
+            <div class="footer-child">
+                <h1 class="footer-header">CELLINFO.pk</h1>
+                <p class="para">Discover <span id="para-heading">"CELLINFO.pk"</span>, where technology meets elegance.
+                    We offer the latest smartphones,with unmatched quality and authenticity. Our expert team ensures a
+                    seamless shopping experience tailored for modern lifestyles. From innovative products to premium
+                    service, we bring the future of electronics to your fingertips. Elevate your tech, elevate your
+                    life.</p>
+            </div>
+
+            <div class="child-1">
+                <h1>contact us</h1>
+                <div>
+                    <ul>
+                        <li><a href="#gmail">eproject215@gmail.com</a>
+                        <li><a href="#phone">0312345678910</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <div class="child-2">
+                <h1>about us</h1>
+
+                <div>
+
+                    <ul>
+                        <li><a href="#service">service</a>
+                        <li><a href="#industries">industries</a>
+                        <li><a href="#company">company</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </footer>
+
+    <!-- ==================== CART MODAL ==================== -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-i18n="cart_title">Your Cart</h2>
+                <span class="close" onclick="closeModal('cart-modal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <ul id="cart-items-list" style="list-style:none;"></ul>
+                <div style="margin-top:20px; font-size:1.2rem; text-align:right;">
+                    <strong>Total: Rs. <span id="cart-total">0</span></strong>
+                </div>
+                <!-- Dynamic checkout button will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== STYLISH 3D CHECKOUT MODAL ==================== -->
+    <div id="checkout-modal" class="modal checkout-3d">
+        <div class="modal-content checkout-content-3d">
+            <div class="checkout-header-3d">
+                <h2 data-i18n="checkout_title">Shipping Details</h2>
+                <span class="close" onclick="closeModal('checkout-modal')">&times;</span>
+            </div>
+            <div class="checkout-body-3d">
+                <form id="checkoutForm" onsubmit="submitOrder(event)">
+                    <div class="form-row-3d">
+                        <div class="form-group-3d">
+                            <label class="floating-label" data-i18n="full_name">Full Name</label>
+                            <input type="text" id="customerName" required class="input-3d">
+                            <i class="fas fa-user input-icon-3d"></i>
+                        </div>
+                        <div class="form-group-3d">
+                            <label class="floating-label" data-i18n="phone_number">Phone Number</label>
+                            <input type="tel" id="customerPhone" required pattern="[0-9]{11}" class="input-3d">
+                            <i class="fas fa-phone input-icon-3d"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group-3d">
+                        <label class="floating-label" data-i18n="email_address">Email Address</label>
+                        <input type="email" id="customerEmail" required class="input-3d">
+                        <i class="fas fa-envelope input-icon-3d"></i>
+                    </div>
+
+                    <div class="form-group-3d">
+                        <label class="floating-label" data-i18n="shipping_address">Shipping Address</label>
+                        <textarea id="customerAddress" rows="3" required class="textarea-3d"></textarea>
+                        <i class="fas fa-map-marker-alt input-icon-3d"></i>
+                    </div>
+
+                    <div class="form-group-3d">
+                        <label class="floating-label" data-i18n="city">City</label>
+                        <select id="customerCity" required class="select-3d">
+                            <option value="">Select City</option>
+                            <option value="Karachi">Karachi</option>
+                            <option value="Lahore">Lahore</option>
+                            <option value="Islamabad">Islamabad</option>
+                            <option value="Rawalpindi">Rawalpindi</option>
+                            <option value="Faisalabad">Faisalabad</option>
+                            <option value="Multan">Multan</option>
+                            <option value="Peshawar">Peshawar</option>
+                            <option value="Quetta">Quetta</option>
+                        </select>
+                        <i class="fas fa-city input-icon-3d"></i>
+                    </div>
+
+                    <div class="order-summary-3d">
+                        <h3 data-i18n="order_summary">Order Summary</h3>
+                        <div class="summary-items-3d" id="orderItems"></div>
+                        <div class="summary-total-3d">
+                            <strong>Total: Rs. <span id="checkoutTotal">0</span></strong>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-3d btn-primary-3d">
+                        <i class="fas fa-check-circle"></i> <span data-i18n="confirm_order">Confirm Order</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

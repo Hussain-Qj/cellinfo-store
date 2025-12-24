@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CELLINFO.pk | Pakistan's #1 Mobile Store</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">CELLINFO<span style="color:var(--secondary);">.pk</span></div>
+            <ul class="nav-links">
+                <li>
+                    <a href="./E.Project_admin/login.html" target="_blank" class="admin-btn">
+                        <i class="fas fa-user-shield"></i> Admin
+                    </a>
+                </li>
+                <li><a href="./index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="./Top Mobiles.html" data-i18n="nav_mobiles">Top Mobiles</a></li>
+                <li><a href="./order-efficiency.html" style="color:var(--secondary); font-weight:bold;">Order
+                        Efficiency</a></li>
+                <li><a href="./feedback.html" style="font-weight:bold;">Feedback</a></li>
+                <li class="lang-switch">
+                    <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()">
+                    <label for="lang-toggle" class="lang-label">
+                        <span class="en">ENG</span>
+                        <span class="ur">اردو</span>
+                    </label>
+                </li>
+                <li>
+                    <a href="#" onclick="openCart(event)">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span id="cart-count" class="badge">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
+    </header>
+
+
+
+    <div class="floating-actions">
+        <button id="theme-toggle" class="float-btn theme-btn" onclick="toggleTheme()" title="Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <div id="toast-container"></div>
+
+
+
+
+
+    <section id="demanding" class="container">
+        <div class="section-header">
+            <h2 data-i18n="section_title">Market Leaders & Best Sellers</h2>
+
+            <div class="brand-controls">
+                <button class="filter-btn active" onclick="filterPhones('all')">All</button>
+                <button class="filter-btn" onclick="filterPhones('demanding')">🔥 Most Demanding</button>
+                <button class="filter-btn" onclick="filterPhones('Samsung')">Samsung</button>
+                <button class="filter-btn" onclick="filterPhones('Apple')">Apple</button>
+                <button class="filter-btn" onclick="filterPhones('Infinix')">Infinix</button>
+                <button class="filter-btn" onclick="filterPhones('Tecno')">Tecno</button>
+                <button class="filter-btn" onclick="filterPhones('Xiaomi')">Xiaomi</button>
+            </div>
+        </div>
+        <div class="price-controls-container" style="text-align: center; margin-bottom: 25px; padding: 10px;">
+            <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 10px;">Filter by Budget:</h3>
+
+            <div class="price-selector">
+                <label class="price-option">
+                    <input type="radio" name="price" value="all" checked onchange="filterByPrice('all')">
+                    <span>All Prices</span>
+                </label>
+
+                <label class="price-option">
+                    <input type="radio" name="price" value="low" onchange="filterByPrice('low')">
+                    <span>Under 50k</span>
+                </label>
+
+                <label class="price-option">
+                    <input type="radio" name="price" value="medium" onchange="filterByPrice('medium')">
+                    <span>50k - 100k</span>
+                </label>
+
+                <label class="price-option">
+                    <input type="radio" name="price" value="high" onchange="filterByPrice('high')">
+                    <span>100k+</span>
+                </label>
+            </div>
+        </div>
+
+        <div id="skeleton-container" class="phone-grid">
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+        </div>
+
+        <div class="phone-grid hidden" id="phoneGrid">
+
+
+        </div>
+    </section>
+
+    <div id="compare-bar" class="compare-bar">
+        <div class="compare-thumbs" id="compare-thumbs"></div>
+        <div style="flex:1;">
+            <strong data-i18n="compare_label">Compare Devices</strong><br>
+            <small><span id="compare-count-num">0</span>/3 Selected</small>
+        </div>
+        <button onclick="showComparisonModal()" class="btn-compare-trigger" data-i18n="btn_compare">Compare Now</button>
+        <button onclick="clearComparison()" style="background:transparent; border:none; cursor:pointer; color:#888;"><i
+                class="fas fa-times"></i></button>
+    </div>
+
+    <div id="compare-modal" class="modal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h2 data-i18n="compare_title">Device Comparison</h2>
+                <span class="close" onclick="closeModal('compare-modal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="comparison-table-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-parent">
+            <div class="footer-child">
+                <h1 class="footer-header">CELLINFO.pk</h1>
+                <p class="para">Discover <span id="para-heading">"CELLINFO.pk"</span>, where technology meets elegance.
+                    We offer the latest smartphones,with unmatched quality and authenticity. Our expert team ensures a
+                    seamless shopping experience tailored for modern lifestyles. From innovative products to premium
+                    service, we bring the future of electronics to your fingertips. Elevate your tech, elevate your
+                    life.</p>
+            </div>
+
+            <div class="child-1">
+                <h1>contact us</h1>
+                <div>
+                    <ul>
+                        <li><a href="#gmail">eproject215@gmail.com</a>
+                        <li><a href="#phone">0312345678910</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <div class="child-2">
+                <h1>about us</h1>
+
+                <div>
+
+                    <ul>
+                        <li><a href="#service">service</a>
+                        <li><a href="#industries">industries</a>
+                        <li><a href="#company">company</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </footer>
+
+    <!-- ==================== CART MODAL ==================== -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-i18n="cart_title">Your Cart</h2>
+                <span class="close" onclick="closeModal('cart-modal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <ul id="cart-items-list" style="list-style:none;"></ul>
+                <div style="margin-top:20px; font-size:1.2rem; text-align:right;">
+                    <strong>Total: Rs. <span id="cart-total">0</span></strong>
+                </div>
+                <!-- Dynamic checkout button will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== STYLISH 3D CHECKOUT MODAL ==================== -->
+    <div id="checkout-modal" class="modal checkout-3d">
+        <div class="modal-content checkout-content-3d">
+            <div class="checkout-header-3d">
+                <h2 data-i18n="checkout_title">Shipping Details</h2>
+                <span class="close" onclick="closeModal('checkout-modal')">&times;</span>
+            </div>
+            <div class="checkout-body-3d">
+                <form id="checkoutForm" onsubmit="submitOrder(event)">
+                    <div class="form-row-3d">
+                        <div class="form-group-3d">
+                            <label class="floating-label" data-i18n="full_name">Full Name</label>
+                            <input type="text" id="customerName" required class="input-3d">
+                            <i class="fas fa-user input-icon-3d"></i>
+                        </div>
+                        <div class="form-group-3d">
+                            <label class="floating-label" data-i18n="phone_number">Phone Number</label>
+                            <input type="tel" id="customerPhone" required pattern="[0-9]{11}" class="input-3d">
+                            <i class="fas fa-phone input-icon-3d"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group-3d">
+                        <label class="floating-label" data-i18n="email_address">Email Address</label>
+                        <input type="email" id="customerEmail" required class="input-3d">
+                        <i class="fas fa-envelope input-icon-3d"></i>
+                    </div>
+
+                    <div class="form-group-3d">
+                        <label class="floating-label" data-i18n="shipping_address">Shipping Address</label>
+                        <textarea id="customerAddress" rows="3" required class="textarea-3d"></textarea>
+                        <i class="fas fa-map-marker-alt input-icon-3d"></i>
+                    </div>
+
+                    <div class="form-group-3d">
+                        <label class="floating-label" data-i18n="city">City</label>
+                        <select id="customerCity" required class="select-3d">
+                            <option value="">Select City</option>
+                            <option value="Karachi">Karachi</option>
+                            <option value="Lahore">Lahore</option>
+                            <option value="Islamabad">Islamabad</option>
+                            <option value="Rawalpindi">Rawalpindi</option>
+                            <option value="Faisalabad">Faisalabad</option>
+                            <option value="Multan">Multan</option>
+                            <option value="Peshawar">Peshawar</option>
+                            <option value="Quetta">Quetta</option>
+                        </select>
+                        <i class="fas fa-city input-icon-3d"></i>
+                    </div>
+
+                    <div class="order-summary-3d">
+                        <h3 data-i18n="order_summary">Order Summary</h3>
+                        <div class="summary-items-3d" id="orderItems"></div>
+                        <div class="summary-total-3d">
+                            <strong>Total: Rs. <span id="checkoutTotal">0</span></strong>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-3d btn-primary-3d">
+                        <i class="fas fa-check-circle"></i> <span data-i18n="confirm_order">Confirm Order</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

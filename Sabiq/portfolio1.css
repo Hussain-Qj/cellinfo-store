@@ -1,0 +1,257 @@
+/* Custom CSS for Amazing Styling - portfolio.css */
+
+/* --- Theme Variables --- */
+:root {
+    --primary-color: #4CAF50; /* A fresh green accent */
+    --transition-speed: 0.3s;
+}
+
+/* Light Theme (Default) */
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --section-bg-color: #f8f9fa;
+    --card-bg-color: #ffffff;
+    --text-color: #343a40;
+    --hero-bg: #e0f2f1; /* Lightened background for hero */
+    --hero-text: var(--text-color);
+    --navbar-bg: #ffffff;
+    --navbar-text: var(--text-color);
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --footer-bg: #f0f0f0;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --bg-color: #1a1a2e; /* Deep dark blue-purple */
+    --section-bg-color: #1e1e3f;
+    --card-bg-color: #2c2c4f;
+    --text-color: #f1f1f1;
+    --hero-bg: #101020; /* Even darker for high contrast */
+    --hero-text: #ffffff;
+    --navbar-bg: #1a1a2e;
+    --navbar-text: #ffffff;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --footer-bg: #0d0d1a;
+}
+
+/* --- Global & Transitions --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+section {
+    background-color: var(--section-bg-color);
+    transition: background-color var(--transition-speed);
+}
+
+.section-title {
+    color: var(--text-color);
+}
+.section-title::after {
+    background-color: var(--primary-color);
+}
+
+/* --- Navbar Styling --- */
+.navbar {
+    background-color: var(--navbar-bg);
+    box-shadow: var(--shadow-light);
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.navbar-brand h2 {
+    color: var(--primary-color);
+    transition: color var(--transition-speed);
+}
+
+.nav-link {
+    color: var(--navbar-text) !important;
+    font-weight: 500;
+    transition: color var(--transition-speed), background-color var(--transition-speed);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color) !important;
+    background-color: rgba(76, 175, 80, 0.1); 
+    border-radius: 5px;
+}
+
+#theme-toggle {
+    color: var(--navbar-text);
+    border-color: var(--navbar-text);
+    transition: all var(--transition-speed);
+}
+#theme-toggle:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 100vh;
+    background: var(--hero-bg);
+    color: var(--hero-text);
+    padding-top: 56px; 
+    position: relative;
+    /* Subtle pulsing effect on text */
+    animation: pulse-shadow 4s infinite;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.hero-title .highlight, .hero-title .name {
+    color: var(--primary-color);
+}
+
+.profile-img {
+    border: 8px solid var(--primary-color);
+    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0.2); /* Outer glow */
+    transition: transform 0.5s ease;
+}
+.profile-img:hover {
+    transform: scale(1.05) rotate(1deg); /* Added slight rotation */
+}
+
+.scroll-indicator {
+    color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: #388E3C; /* Darker green */
+    border-color: #388E3C;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+.btn-outline-light {
+    color: var(--hero-text);
+    border-color: var(--hero-text);
+}
+.btn-outline-light:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+
+/* --- Skills & Cards --- */
+.skill-card {
+    background: var(--card-bg-color);
+    box-shadow: var(--shadow-light);
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-color); /* Stylish vertical accent */
+    transition: all 0.4s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.skill-icon i {
+    color: var(--primary-color);
+    background-color: rgba(76, 175, 80, 0.1);
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.progress-bar {
+    transition: width 1.5s ease-in-out; /* Add transition for animation */
+}
+
+/* --- Education Section (Timeline) --- */
+.timeline::before {
+    background-color: var(--primary-color);
+}
+
+.timeline-dot {
+    background-color: var(--card-bg-color);
+    border: 3px solid var(--primary-color);
+}
+
+.timeline-content {
+    background-color: var(--card-bg-color);
+    box-shadow: var(--shadow-light);
+    transition: all var(--transition-speed);
+}
+.timeline-content .timeline-date {
+    color: var(--primary-color);
+}
+
+/* --- Portfolio Section --- */
+.slide-content {
+    background-color: var(--card-bg-color);
+    box-shadow: var(--shadow-light);
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: var(--primary-color);
+}
+
+/* --- Contact Section --- */
+.contact-info {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.2);
+}
+
+.contact-info i {
+    color: white; 
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.contact-form {
+    background: var(--card-bg-color);
+    box-shadow: var(--shadow-light);
+}
+
+.contact-form input, .contact-form textarea {
+    background-color: var(--bg-color);
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--footer-bg) !important;
+    color: var(--text-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.footer a {
+    color: var(--primary-color);
+}
+
+/* --- Keyframe Animations --- */
+@keyframes pulse-shadow {
+    0% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); }
+    50% { text-shadow: 0 0 15px rgba(76, 175, 80, 0.5); }
+    100% { text-shadow: 0 0 5px rgba(76, 175, 80, 0.2); }
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Scroll Fade Animation (JavaScript controlled) */
+.fade-in-on-scroll {
+    opacity: 0;
+    transform: translateY(30px); /* Increased movement for better effect */
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.fade-in-on-scroll.animate-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media Queries */
+@media (max-width: 991.98px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+}

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hussain Quaid - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="portfolio1.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#main-navbar" data-bs-offset="50" data-theme="light"> 
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="main-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h2>Hussain Quaid</h2>
+            </a>
+            
+            <div class="d-flex align-items-center order-lg-3">
+                <button id="theme-toggle" class="btn btn-sm btn-outline-secondary me-3" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse justify-content-end order-lg-2" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="home" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 order-lg-1 order-2">
+                    <div class="hero-text text-center text-lg-start">
+                        <h1 class="hero-title display-3 fw-bold mb-3">
+                            <span class="highlight">Assalamu Alaikum!</span>
+                            <br>
+                            I'm <span class="name text-primary">Hussain Quaid</span>
+                        </h1>
+                        <p class="hero-subtitle lead mb-4">Web Developer | Educator | Hafiz-ul-Quran | Sports Enthusiast</p>
+                        <div class="hero-buttons d-grid gap-2 d-md-block">
+                            <a href="#portfolio" class="btn btn-primary btn-lg me-md-2">View My Work</a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 order-lg-2 order-1 text-center mb-4 mb-lg-0">
+                    <div class="hero-image-wrapper mx-auto">
+                        <img src="profile.jpg" alt="Hussain Quaid" class="profile-img img-fluid rounded-circle shadow-lg"> 
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator text-center pt-5">
+                <i class="fas fa-chevron-down fa-2x animate__bounce"></i>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="about-content fade-in-on-scroll" data-delay="0">
+                        <div class="about-text">
+                            <p class="lead">Hello! I'm Hussain Quaid, a 23-year-old passionate web developer and educator from Pakistan. With a unique blend of technical skills and spiritual knowledge, I bring a holistic approach to everything I do.</p>
+                            <p class="mb-4">Currently working at **Al-Jamea Tus Saifiyah Sind Campus** while pursuing my diploma in Web Development from **APTECH** and B.Ed from **Virtual University**. As a **Hafiz-ul-Quran**, I combine traditional values with modern technology.</p>
+                            
+                            <div class="row personal-info g-4">
+                                <div class="col-md-4">
+                                    <div class="info-item">
+                                        <span class="info-label fw-bold">Age:</span>
+                                        <span class="info-value">23 Years</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="info-item">
+                                        <span class="info-label fw-bold">Location:</span>
+                                        <span class="info-value">Sind, Pakistan</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="info-item">
+                                        <span class="info-label fw-bold">Email:</span>
+                                        <span class="info-value">hussain.quaid@email.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="skills py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">My Skills</h2>
+            <div class="row g-4 skills-grid">
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="skill-card p-4 text-center h-100 fade-in-on-scroll" data-delay="0">
+                        <div class="skill-icon mb-3">
+                            <i class="fas fa-code fa-3x"></i>
+                        </div>
+                        <h3 class="h5">Web Development</h3>
+                        <p class="text-muted">HTML, CSS, JavaScript, React, Node.js</p>
+                        <div class="progress" role="progressbar" aria-label="Web Development" aria-valuenow="85"
+                            aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar bg-primary" style="width: 0%">85%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="skill-card p-4 text-center h-100 fade-in-on-scroll" data-delay="100">
+                        <div class="skill-icon mb-3">
+                            <i class="fas fa-paint-brush fa-3x"></i>
+                        </div>
+                        <h3 class="h5">Designing</h3>
+                        <p class="text-muted">UI/UX Design, Photoshop, Figma</p>
+                        <div class="progress" role="progressbar" aria-label="Designing" aria-valuenow="80"
+                            aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar bg-primary" style="width: 0%">80%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="skill-card p-4 text-center h-100 fade-in-on-scroll" data-delay="200">
+                        <div class="skill-icon mb-3">
+                            <i class="fas fa-users fa-3x"></i>
+                        </div>
+                        <h3 class="h5">Administrative Skills</h3>
+                        <p class="text-muted">Office Management, Team Leadership</p>
+                        <div class="progress" role="progressbar" aria-label="Administrative Skills" aria-valuenow="90"
+                            aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar bg-primary" style="width: 0%">90%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="skill-card p-4 text-center h-100 fade-in-on-scroll" data-delay="300">
+                        <div class="skill-icon mb-3">
+                            <i class="fas fa-book fa-3x"></i>
+                        </div>
+                        <h3 class="h5">Teaching</h3>
+                        <p class="text-muted">Quran Teaching, Web Development Training</p>
+                        <div class="progress" role="progressbar" aria-label="Teaching" aria-valuenow="95"
+                            aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar bg-primary" style="width: 0%">95%</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="education" class="education py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Education & Work</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="timeline">
+                        <div class="timeline-item row g-0">
+                            <div class="col-auto">
+                                <div class="timeline-dot"></div>
+                            </div>
+                            <div class="col ps-4">
+                                <div class="timeline-content p-3 mb-4 rounded fade-in-on-scroll" data-delay="0">
+                                    <h3 class="h5">Bachelor of Education (B.Ed)</h3>
+                                    <span class="timeline-date small fw-bold">2025 - Present</span>
+                                    <p class="mb-0">Virtual University of Pakistan</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item row g-0">
+                            <div class="col-auto">
+                                <div class="timeline-dot"></div>
+                            </div>
+                            <div class="col ps-4">
+                                <div class="timeline-content p-3 mb-4 rounded fade-in-on-scroll" data-delay="100">
+                                    <h3 class="h5">Diploma in Web Development</h3>
+                                    <span class="timeline-date small fw-bold">2025 - Present</span>
+                                    <p class="mb-0">APTECH Computer Education</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item row g-0">
+                            <div class="col-auto">
+                                <div class="timeline-dot"></div>
+                            </div>
+                            <div class="col ps-4">
+                                <div class="timeline-content p-3 mb-4 rounded fade-in-on-scroll" data-delay="200">
+                                    <h3 class="h5">Hafiz-ul-Quran</h3>
+                                    <span class="timeline-date small fw-bold">2015 - 2018</span>
+                                    <p class="mb-0">Memorized the Holy Quran</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item row g-0">
+                            <div class="col-auto">
+                                <div class="timeline-dot"></div>
+                            </div>
+                            <div class="col ps-4">
+                                <div class="timeline-content p-3 mb-4 rounded fade-in-on-scroll" data-delay="300">
+                                    <h3 class="h5">Teacher & Administrator</h3>
+                                    <span class="timeline-date small fw-bold">2025</span>
+                                    <p class="mb-0">Al-Jamea Tus Saifiyah </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio" class="portfolio py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">My Portfolio</h2>
+            
+            <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner slider-container">
+                    
+                    <div class="carousel-item active">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 fade-in-on-scroll" data-delay="0">
+                                <img src="project1.jpg" class="d-block w-100 img-fluid rounded shadow" alt="Project 1">
+                            </div>
+                            <div class="col-md-6 slide-content p-4 fade-in-on-scroll" data-delay="100">
+                                <h3 class="h4 fw-bold">Modern Website Design</h3>
+                                <p>Responsive web design with modern UI/UX principles, built with React and Bootstrap.</p>
+                                <a href="#" class="btn btn-primary mt-2">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 fade-in-on-scroll" data-delay="0">
+                                <img src="project2.jpg" class="d-block w-100 img-fluid rounded shadow" alt="Project 2">
+                            </div>
+                            <div class="col-md-6 slide-content p-4 fade-in-on-scroll" data-delay="100">
+                                <h3 class="h4 fw-bold">Academic Office Management</h3>
+                                <p>A secure, student report management portal designed for educational institutions.</p>
+                                <a href="#" class="btn btn-primary mt-2">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 fade-in-on-scroll" data-delay="0">
+                                <img src="project3.jpg" class="d-block w-100 img-fluid rounded shadow" alt="Project 3">
+                            </div>
+                            <div class="col-md-6 slide-content p-4 fade-in-on-scroll" data-delay="100">
+                                <h3 class="h4 fw-bold">Detailed Student Report Card</h3>
+                                <p>Report card generation system with detailed academic performance analysis.</p>
+                                <a href="#" class="btn btn-primary mt-2">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            
+        </div>
+    </section>
+    <section id="contact" class="contact py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Get In Touch</h2>
+            <div class="row contact-content justify-content-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <div class="contact-info p-4 h-100 fade-in-on-scroll" data-delay="0">
+                        <div class="contact-item d-flex align-items-start mb-4">
+                            <i class="fas fa-envelope fa-2x me-3"></i>
+                            <div>
+                                <h3 class="h6 fw-bold mb-0">Email</h3>
+                                <p class="mb-0">hussain.quaid@email.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item d-flex align-items-start mb-4">
+                            <i class="fas fa-phone fa-2x me-3"></i>
+                            <div>
+                                <h3 class="h6 fw-bold mb-0">Phone</h3>
+                                <p class="mb-0">+92 3330241263</p>
+                            </div>
+                        </div>
+                        <div class="contact-item d-flex align-items-start mb-4">
+                            <i class="fas fa-map-marker-alt fa-2x me-3"></i>
+                            <div>
+                                <h3 class="h6 fw-bold mb-0">Location</h3>
+                                <p class="mb-0">Sind, Pakistan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <form class="contact-form p-4 fade-in-on-scroll" data-delay="100">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer py-4">
+        <div class="container text-center">
+            <div class="social-links mb-3">
+                <a href="#" class="mx-2"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="#" class="mx-2"><i class="fab fa-github fa-2x"></i></a>
+                <a href="#" class="mx-2"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#" class="mx-2"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+            <p class="mb-0 small">&copy; 2025 Hussain Quaid. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="portfolio1.js"></script>
+</body>
+
+</html>

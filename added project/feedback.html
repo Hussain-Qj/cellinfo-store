@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Feedback | CELLINFO.pk</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .feedback-container {
+            padding: 8rem 5%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .feedback-form {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #eee;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .rating-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .rating-stars {
+            display: flex;
+            gap: 5px;
+            color: #ddd;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .rating-stars i.active {
+            color: #f1c40f;
+        }
+
+        .rating-stars i:hover {
+            color: #f39c12;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">CELLINFO<span style="color:var(--secondary);">.pk</span></div>
+            <ul class="nav-links">
+                <li><a href="./E.Project_admin/login.html" target="_blank" class="admin-btn"><i
+                            class="fas fa-user-shield"></i> Admin</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Top Mobiles.html">Top Mobiles</a></li>
+                <li><a href="order-efficiency.html">Order Efficiency</a></li>
+                <li><a href="feedback.html" class="active">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="toast-container"></div>
+
+    <section class="feedback-container">
+        <div class="section-header">
+            <h2>Share Your Experience</h2>
+            <p>Your feedback helps us improve our service efficiency.</p>
+        </div>
+
+        <form class="feedback-form" id="feedbackForm" onsubmit="submitFeedback(event)">
+            <!-- STEP 1: ORDER LOOKUP -->
+            <div id="lookupSection">
+                <div class="form-group">
+                    <label>Enter Order ID to Verify Delivery</label>
+                    <div style="display:flex; gap:10px;">
+                        <input type="text" id="orderId" class="input-3d" placeholder="ORD..." required>
+                        <button type="button" class="btn-3d" onclick="verifyOrderForFeedback()"
+                            style="background:var(--secondary); color:#fff;">Verify</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 2: FEEDBACK (Hidden until Verified) -->
+            <div id="ratingSection" style="display:none; animation: slideInUp 0.5s;">
+                <div style="background:#e8f5e9; padding:15px; border-radius:10px; margin-bottom:20px;">
+                    <h4 style="color:#2e7d32; margin-bottom:5px;">Verified Purchase</h4>
+                    <p style="font-size:0.9rem; color:#555;"><strong>Customer:</strong> <span
+                            id="displayCustomer">-</span></p>
+                    <p style="font-size:0.9rem; color:#555;"><strong>Mobile:</strong> <span id="displayPhone">-</span>
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label>1. Order Efficiency (Speed & Handling)</label>
+                    <div class="rating-group">
+                        <div class="rating-stars" data-field="efficiencyResult">
+                            <i class="fas fa-star" data-val="1"></i>
+                            <i class="fas fa-star" data-val="2"></i>
+                            <i class="fas fa-star" data-val="3"></i>
+                            <i class="fas fa-star" data-val="4"></i>
+                            <i class="fas fa-star" data-val="5"></i>
+                        </div>
+                        <input type="hidden" id="efficiencyResult" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>2. Delivery Process</label>
+                    <div class="rating-group">
+                        <div class="rating-stars" data-field="deliveryResult">
+                            <i class="fas fa-star" data-val="1"></i>
+                            <i class="fas fa-star" data-val="2"></i>
+                            <i class="fas fa-star" data-val="3"></i>
+                            <i class="fas fa-star" data-val="4"></i>
+                            <i class="fas fa-star" data-val="5"></i>
+                        </div>
+                        <input type="hidden" id="deliveryResult" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>3. Product Satisfaction</label>
+                    <div class="rating-group">
+                        <div class="rating-stars" data-field="productResult">
+                            <i class="fas fa-star" data-val="1"></i>
+                            <i class="fas fa-star" data-val="2"></i>
+                            <i class="fas fa-star" data-val="3"></i>
+                            <i class="fas fa-star" data-val="4"></i>
+                            <i class="fas fa-star" data-val="5"></i>
+                        </div>
+                        <input type="hidden" id="productResult" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Remarks (Optional)</label>
+                    <textarea id="feedbackRemarks" rows="3" class="input-3d"
+                        placeholder="Tell us more about your experience..." style="width:100%"></textarea>
+                </div>
+
+                <button type="submit" class="btn-3d btn-primary-3d" style="width:100%">
+                    Submit Ratings
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <!-- FLOATING THEME TOGGLE -->
+    <div class="floating-actions">
+        <button id="theme-toggle" class="float-btn theme-btn" onclick="toggleTheme()" title="Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Star Rating Logic
+        document.querySelectorAll('.rating-stars i').forEach(star => {
+            star.addEventListener('click', function () {
+                const val = this.dataset.val;
+                const parent = this.parentElement;
+                const fieldId = parent.dataset.field;
+
+                // Set hidden input
+                document.getElementById(fieldId).value = val;
+
+                // Visual update
+                parent.querySelectorAll('i').forEach(s => {
+                    s.classList.toggle('active', s.dataset.val <= val);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
