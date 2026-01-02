@@ -1585,3 +1585,109 @@ body.urdu-mode footer * {
     direction: ltr;
     text-align: left;
 }
+
+/* --- MOBILE RESPONSIVENESS (ADDED) --- */
+@media screen and (max-width: 768px) {
+
+    /* 1. Navbar Stacking */
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        margin-bottom: 5px;
+    }
+
+    /* 2. Hero Section */
+    .hero-section {
+        flex-direction: column-reverse;
+        /* Phone on top/middle, text below or vice versa. Let's keep text on top for readability */
+        justify-content: center;
+        text-align: center;
+        padding: 120px 5% 50px 5%;
+        /* Top padding for fixed navbar */
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 300px;
+        /* Space for the 3D phone which is absolutely positioned or fixed */
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    /* Adjust 3D Model Position for Mobile */
+    .phone-3d {
+        transform: scale(0.6) translateY(50px);
+        left: 50%;
+        transform-origin: center;
+    }
+
+    /* 3. Section Headers */
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    /* 4. Service Grid */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 5. Modals (Cart & Checkout) */
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        max-width: 100%;
+    }
+
+    .checkout-body-3d {
+        padding: 15px;
+    }
+
+    .form-row-3d {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* 6. Comparison Bar */
+    .compare-bar {
+        width: 95%;
+        padding: 10px;
+        flex-direction: column;
+        gap: 10px;
+        bottom: -200px;
+        /* Hide deeper */
+    }
+
+    .compare-bar.visible {
+        bottom: 10px;
+    }
+
+    /* 7. Footer */
+    .footer-parent {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-child,
+    .child-1,
+    .child-2 {
+        width: 100%;
+    }
+}

@@ -626,3 +626,15 @@ canvas {
 .hidden {
     display: none !important;
 }
+
+/* --- EXTRA MOBILE REFINEMENTS --- */
+@media screen and (max-width: 400px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-primary {
+        width: 100%;
+        justify-content: center;
+    }
+}
