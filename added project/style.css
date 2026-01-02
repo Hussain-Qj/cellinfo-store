@@ -1721,4 +1721,17 @@ body.urdu-mode footer * {
         padding: 0 5px;
         /* Reduced padding */
     }
+
+    /* 8. Comparison Table Overflow Fix */
+    #comparison-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        display: block;
+    }
+
+    .comp-table {
+        min-width: 500px;
+        /* Ensure table is wide enough to scroll */
+    }
 }
