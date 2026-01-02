@@ -1606,6 +1606,8 @@ body.urdu-mode footer * {
 
     .logo {
         margin-bottom: 5px;
+        font-size: 1.5rem;
+        /* Reduced from default to fit ASKME_MOBILE */
     }
 
     /* 2. Hero Section */
@@ -1694,5 +1696,10 @@ body.urdu-mode footer * {
     .child-1,
     .child-2 {
         width: 100%;
+    }
+
+    .footer-header {
+        font-size: 1.5rem;
+        /* Reduced to prevent wrapping on mobile */
     }
 }
