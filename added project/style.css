@@ -1622,9 +1622,14 @@ body.urdu-mode footer * {
 
     .hero-content {
         max-width: 100%;
-        margin-bottom: 300px;
-        /* Space for the 3D phone which is absolutely positioned or fixed */
+        margin-bottom: 350px;
+        /* Increased space for 3D phone */
         padding: 20px;
+        position: relative;
+        z-index: 10;
+        /* Ensure text is above if they touch */
+        background: rgba(0, 50, 20, 0.6);
+        /* Slightly darker bg for readability */
     }
 
     .hero-content h1 {

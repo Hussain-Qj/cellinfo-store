@@ -1,7 +1,8 @@
 /* --- CONFIGURATION & TRANSLATIONS --- */
 const translations = {
     en: {
-        nav_home: "Home", nav_mobiles: "Top Mobiles", hero_title: "Most Demanding Mobile in Pakistan Market",
+        nav_efficiency: "Order Efficiency", nav_feedback: "Feedback",
+        hero_title: "Most Demanding Mobile in Pakistan Market",
         hero_desc: "Explore 100% PTA Approved devices with official warranty.", hero_btn: "Explore Collections",
         section_title: "Market Leaders & Best Sellers", compare_title: "Device Comparison", cart_title: "Your Cart",
         pta_approved: "PTA Approved", month: "/month", add_cart: "Add Cart", compare: "Compare",
@@ -16,10 +17,22 @@ const translations = {
         email_address: "Email Address",
         shipping_address: "Shipping Address",
         city: "City",
-        order_summary: "Order Summary"
+        order_summary: "Order Summary",
+        // Efficiency Page
+        efficiency_header: "Operational Transparency",
+        efficiency_desc: "Real-time insights into our service quality and order processing efficiency.",
+        label_fulfillment: "Avg. Fulfillment Time",
+        label_success: "Order Success Rate",
+        label_inventory: "Inventory Availability",
+        chart_trend: "Order Fulfillment Trend (Last 7 Days)",
+        chart_satisfaction: "Customer Satisfaction",
+        // Feedback Page
+        feedback_header: "Share Your Experience",
+        feedback_desc: "Your feedback helps us improve our service efficiency."
     },
     ur: {
-        nav_home: "ہوم", nav_mobiles: "مقبول موبائلز", hero_title: "پاکستان میں سب سے زیادہ مقبول موبائل",
+        nav_efficiency: "آرڈر کی کارکردگی", nav_feedback: "فیڈبیک",
+        hero_title: "پاکستان میں سب سے زیادہ مقبول موبائل",
         hero_desc: "تصدیق شدہ پی ٹی اے منظور شدہ فونز کی بہترین ورائٹی حاصل کریں۔", hero_btn: "کلیکشن دیکھیں",
         section_title: "مارکیٹ کے بہترین فونز", compare_title: "موازنہ کریں", cart_title: "آپ کی ٹوکری",
         pta_approved: "پی ٹی اے منظور شدہ", month: "/ماہانہ", add_cart: "خریدیں", compare: "موازنہ",
@@ -34,7 +47,18 @@ const translations = {
         email_address: "ای میل پتہ",
         shipping_address: "شپنگ پتہ",
         city: "شہر",
-        order_summary: "آرڈر کا خلاصہ"
+        order_summary: "آرڈر کا خلاصہ",
+        // Efficiency Page
+        efficiency_header: "آپریشنل شفافیت",
+        efficiency_desc: "ہماری سروس کے معیار اور آرڈر پروسیسنگ کی کارکردگی پر براہ راست بصیرت۔",
+        label_fulfillment: "اوسط تکمیل کا وقت",
+        label_success: "آرڈر کامیابی کی شرح",
+        label_inventory: "انوینٹری کی دستیابی",
+        chart_trend: "آرڈر کی تکمیل کا رجحان (گزشتہ 7 دن)",
+        chart_satisfaction: "کسٹمر کا اطمینان",
+        // Feedback Page
+        feedback_header: "اپنا تجربہ شیئر کریں",
+        feedback_desc: "آپ کی رائے ہمیں اپنی سروس کی کارکردگی کو بہتر بنانے میں مدد کرتی ہے۔"
     }
 };
 

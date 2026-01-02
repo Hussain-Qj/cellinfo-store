@@ -61,8 +61,8 @@
                             class="fas fa-user-shield"></i> Admin</a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Top Mobiles.html">Top Mobiles</a></li>
-                <li><a href="order-efficiency.html">Order Efficiency</a></li>
-                <li><a href="feedback.html" class="active">Feedback</a></li>
+                <li><a href="order-efficiency.html" data-i18n="nav_efficiency">Order Efficiency</a></li>
+                <li><a href="feedback.html" class="active" data-i18n="nav_feedback">Feedback</a></li>
             </ul>
         </nav>
     </header>
@@ -71,8 +71,8 @@
 
     <section class="feedback-container">
         <div class="section-header">
-            <h2>Share Your Experience</h2>
-            <p>Your feedback helps us improve our service efficiency.</p>
+            <h2 data-i18n="feedback_header">Share Your Experience</h2>
+            <p data-i18n="feedback_desc">Your feedback helps us improve our service efficiency.</p>
         </div>
 
         <form class="feedback-form" id="feedbackForm" onsubmit="submitFeedback(event)">

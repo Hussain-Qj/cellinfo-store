@@ -77,43 +77,44 @@
                             class="fas fa-user-shield"></i> Admin</a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Top Mobiles.html">Top Mobiles</a></li>
-                <li><a href="order-efficiency.html" class="active">Order Efficiency</a></li>
-                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="order-efficiency.html" class="active" data-i18n="nav_efficiency">Order Efficiency</a></li>
+                <li><a href="feedback.html" data-i18n="nav_feedback">Feedback</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="efficiency-container">
         <div class="efficiency-header">
-            <h1>Operational Transparency</h1>
-            <p>Real-time insights into our service quality and order processing efficiency.</p>
+            <h1 data-i18n="efficiency_header">Operational Transparency</h1>
+            <p data-i18n="efficiency_desc">Real-time insights into our service quality and order processing efficiency.
+            </p>
         </div>
 
         <div class="efficiency-grid">
             <div class="metric-card">
                 <i class="fas fa-clock fa-2x" style="color:var(--secondary)"></i>
                 <div class="metric-value" id="avgTime">0h</div>
-                <div class="metric-label">Avg. Fulfillment Time</div>
+                <div class="metric-label" data-i18n="label_fulfillment">Avg. Fulfillment Time</div>
             </div>
             <div class="metric-card">
                 <i class="fas fa-check-circle fa-2x" style="color:var(--primary)"></i>
                 <div class="metric-value" id="successRate">0%</div>
-                <div class="metric-label">Order Success Rate</div>
+                <div class="metric-label" data-i18n="label_success">Order Success Rate</div>
             </div>
             <div class="metric-card">
                 <i class="fas fa-box fa-2x" style="color:#3498db"></i>
                 <div class="metric-value" id="stockLevel">0%</div>
-                <div class="metric-label">Inventory Availability</div>
+                <div class="metric-label" data-i18n="label_inventory">Inventory Availability</div>
             </div>
         </div>
 
         <div class="efficiency-grid">
             <div class="chart-container">
-                <h3>Order Fulfillment Trend (Last 7 Days)</h3>
+                <h3 data-i18n="chart_trend">Order Fulfillment Trend (Last 7 Days)</h3>
                 <canvas id="fulfillmentChart"></canvas>
             </div>
             <div class="chart-container">
-                <h3>Customer Satisfaction</h3>
+                <h3 data-i18n="chart_satisfaction">Customer Satisfaction</h3>
                 <canvas id="satisfactionChart"></canvas>
             </div>
         </div>
