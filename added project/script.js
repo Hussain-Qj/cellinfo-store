@@ -1,6 +1,7 @@
 /* --- CONFIGURATION & TRANSLATIONS --- */
 const translations = {
     en: {
+        nav_home: "Home", nav_mobiles: "Top Mobiles",
         nav_efficiency: "Order Efficiency", nav_feedback: "Feedback",
         hero_title: "Most Demanding Mobile in Pakistan Market",
         hero_desc: "Explore 100% PTA Approved devices with official warranty.", hero_btn: "Explore Collections",
@@ -31,6 +32,7 @@ const translations = {
         feedback_desc: "Your feedback helps us improve our service efficiency."
     },
     ur: {
+        nav_home: "ہوم", nav_mobiles: "مقبول موبائلز",
         nav_efficiency: "آرڈر کی کارکردگی", nav_feedback: "فیڈبیک",
         hero_title: "پاکستان میں سب سے زیادہ مقبول موبائل",
         hero_desc: "تصدیق شدہ پی ٹی اے منظور شدہ فونز کی بہترین ورائٹی حاصل کریں۔", hero_btn: "کلیکشن دیکھیں",
