@@ -1649,8 +1649,18 @@ body.urdu-mode footer * {
     }
 
     /* 3. Section Headers */
-    .section-header h2 {
-        font-size: 1.8rem;
+    /* 3. Section Headers & About Text */
+    .section-header h2,
+    .about-text h2 {
+        font-size: 1.5rem;
+        word-break: break-all;
+        /* Force break specifically for long domain names */
+        overflow-wrap: anywhere;
+        /* Modern support */
+        hyphens: auto;
+        line-height: 1.3;
+        width: 100%;
+        /* Ensure it fills container */
     }
 
     /* 4. Service Grid */
@@ -1703,12 +1713,12 @@ body.urdu-mode footer * {
 
     .footer-header {
         font-size: 1.3rem;
-        /* Further reduced */
-        word-break: break-word;
-        /* Force wrap if needed */
-        margin-bottom: 10px;
+        word-break: break-all;
+        /* Force break specifically for long domain names */
+        overflow-wrap: anywhere;
+        margin-bottom: 15px;
         line-height: 1.2;
-        padding: 0 10px;
-        /* Prevent edge touching */
+        padding: 0 5px;
+        /* Reduced padding */
     }
 }
