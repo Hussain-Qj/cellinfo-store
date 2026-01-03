@@ -101,22 +101,10 @@ nav.navbar {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    padding: 5px 0;
-}
-
-.logo-img {
-    height: 55px;
-    /* Optimal height for navbar */
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    transition: transform 0.3s ease;
-}
-
-.logo-img:hover {
-    transform: scale(1.05);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #004d25;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
 }
 
 .nav-links {
